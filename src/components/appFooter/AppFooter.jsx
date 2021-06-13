@@ -18,11 +18,10 @@ const AppFooter = ({ gists = [], userName = '', selectedGist }) => {
     instructions = INST_GO_BACK;
   }
 
-
   return (
     <footer>
-      {instructions.map((inst) => (
-        <div>{inst}</div>
+      {instructions.map((inst, ind) => (
+        <div key={`inst_${ind}`}>{inst}</div>
       ))}
     </footer>
   )

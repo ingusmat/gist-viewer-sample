@@ -39,4 +39,13 @@ small {
   background-color: transparent;
   color: gold;
   font-size: 22px;
+  cursor: pointer;
+}
+
+a, a:visited {
+  color: #eaeaea;
+}
+
+a:hover {
+  color: #fefefe;
 }
