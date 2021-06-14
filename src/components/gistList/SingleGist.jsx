@@ -34,8 +34,8 @@ const SingleGist = ({ gist, returnToList, favoritify, deFavoritify }) => {
       <p>{description}</p>
       <label>files</label>
       <ul>
-        {files.map((file) => (
-          <li>{file}</li>
+        {files.map((file, ind) => (
+          <li key={`file_${ind}`}>{file}</li>
         ))}
       </ul>
       <label>favorite</label>
