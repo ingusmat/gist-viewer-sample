@@ -3,6 +3,12 @@
 ### The Mission
 To create a public gist viewer.
 
+### The TLDR
+1. Clone this repository
+2. Install dependencies with `npm install`
+3. Run the app with `npm start`
+4. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
 ### The Details
 Once finished, we should be able to search for a GitHub username and see
 all the public gists for that user. From each gist, we should be able to view all the files in that gist. To make things
