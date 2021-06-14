@@ -1,27 +1,25 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+
 import Star from '../ui/Star';
+import pdAnd from '../../utilities/utilityFunctions'; 
 
 const STAR_VAR_FILLED = 'filled';
 const STAR_VAR_OPEN = 'open';
 
-/**
- * @decorator
- * @param {Event} e
- * @param {function} func
- *
- * (P)revents (D)efault click behavior, (A)nd returns the provided function
- */
-const pdAnd = (e, func) => {
-  e.preventDefault();
-
-  return func
-}
-
-const GistList = ({ gists, updateSelectedGist, toggleFavorite }) => {
+const GistList = ({ gists, updateSelectedGist, favoritify, deFavoritify }) => {
   return (
     <ul className="gist-list">
       {gists.map((gist) => {
         const { description, id, url, createDate, isFavorite } = gist;
+
+        const toggleFavorite = () => {
+          if (isFavorite) {
+            deFavoritify(id);
+          } else {
+            favoritify(id);
+          }
+        }
 
         return (
           <li key={id}>
@@ -33,6 +31,20 @@ const GistList = ({ gists, updateSelectedGist, toggleFavorite }) => {
       })}
     </ul>
   );
+}
+
+GistList.propTypes = {
+  gists: PropTypes.array,
+  updateSelectedGist: PropTypes.func,
+  favoritify: PropTypes.func,
+  deFavoritify: PropTypes.func, 
+}
+
+GistList.defaultProps = {
+  gists: [],
+  updateSelectedGist: null,
+  favoritify: null,
+  deFavoritify: null, 
 }
 
 export default GistList;

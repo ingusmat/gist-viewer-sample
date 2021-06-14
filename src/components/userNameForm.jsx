@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import TextBox from './ui/textbox';
+import PropTypes from 'prop-types';
+
+import TextBox from './ui/Textbox';
 
 const UserNameForm =  ({ onSubmit }) => {
   const [currentUN, setCurrentUN] = useState('');
@@ -11,5 +13,13 @@ const UserNameForm =  ({ onSubmit }) => {
     </form>
   );
 }
+
+UserNameForm.propTypes = {
+  onSubmit: PropTypes.func,
+};
+
+UserNameForm.defaultProps = {
+  onSubmit: null,
+};
 
 export default UserNameForm;

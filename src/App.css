@@ -49,3 +49,64 @@ a, a:visited {
 a:hover {
   color: #fefefe;
 }
+
+header ul {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  width: 80%;
+  max-width: 900px;
+  margin: 0 auto 20px;
+}
+header ul li {
+  display: inline-block;
+  margin: 0;
+  align-self: flex-end;
+}
+header ul li:first-of-type {
+  align-self: flex-start;
+}
+
+h1 {
+  margin: 20px 0 0 0;
+}
+
+h2 {
+  margin: 10px, 0;
+  font-size: 20px;
+}
+
+nav {
+  font-size: 14px;
+}
+
+footer {
+  color: rgba(255, 255, 255, .60);
+}
+
+button {
+  border-radius: 5px;
+  padding: 2px 6px;
+  cursor: pointer;
+  background-color: #cccccc;
+}
+
+button:disabled {
+  background-color: gold;
+  color: black;
+  cursor: initial;
+}
+
+.single-gist {
+  text-align: left;
+}
+
+.single-gist p,
+.single-gist ul {
+  margin: 0 0 20px 0;
+}
+
+.single-gist label {
+  color: rgba(255, 255, 255, .40);
+}

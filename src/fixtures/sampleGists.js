@@ -1,4 +1,5 @@
-const sampleGists = [
+/* our sample data to mock api return */
+const large = [
   {
     id: 'dfb81a48-ca1b-11eb-b8bc-0242ac130003',
     url: '',
@@ -26,4 +27,17 @@ const sampleGists = [
   },
 ]
 
+/*
+ * a rather silly way to show that our actual api would not overhydrate
+ * data returned by findAllByUser
+ */
+const small = large.map((gist) => {
+  const { id, isFavorite, description, createDate } = gist;
+
+  return { id, isFavorite, description, createDate };
+});
+
+const sampleGists = { small, large };
+
 export default sampleGists;
+
